@@ -10,4 +10,4 @@ app.use('/', router);
 //start the server
 app.listen(port, function() {
     console.log('app started');
-});
+});     
