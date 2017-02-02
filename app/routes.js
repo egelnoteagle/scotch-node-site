@@ -42,6 +42,6 @@ router.get('/about', function(req, res) {
 router.get('/contact', function(req, res) {
     res.render('pages/contact');
 });
-router.post('/contact', function() {
+router.post('/contact', function(req, res) {
   res.send('Thanks for contacting us, ' + req.body.name + '! We will respond shortly!');
 });
