@@ -14,7 +14,28 @@ router.get('/', function(req, res) {
 
 // route for our about page
 router.get('/about', function(req, res) {
-    res.render('pages/about');
+    var users = [{
+            name: 'Holly',
+            email: 'holly@scotch.io',
+            avatar: 'http://placekitten.com/100/100'
+        },
+        {
+            name: 'Derek',
+            email: 'derek@scotch.io',
+            avatar: 'http://placekitten.com/300/400'
+        },
+        {
+            name: 'Dave',
+            email: 'dave@scotch.io',
+            avatar: 'http://placekitten.com/600/600'
+        },
+        {
+            name: 'Luke',
+            email: 'luke@scotch.io',
+            avatar: 'http://placekitten.com/700/700'
+        },
+    ];
+    res.render('pages/about', {users: users});
 });
 
 // routes for contact page
@@ -22,5 +43,5 @@ router.get('/contact', function(req, res) {
     res.render('pages/contact');
 });
 router.post('/contact', function() {
-
+  res.send('Thanks for contacting us, ' + req.body.name + '! We will respond shortly!');
 });
